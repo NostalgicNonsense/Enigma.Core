@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Enigma.Core.Networking
+﻿namespace Enigma.Core.Networking.Messaging
 {
     public struct MessageWrapper
     {
