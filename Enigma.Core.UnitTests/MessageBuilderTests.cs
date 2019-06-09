@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Enigma.Core.Networking;
+using Enigma.Core.Networking.Messaging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -23,7 +24,7 @@ namespace Enigma.Core.UnitTests
 
             var messageWrapperAsJson = JsonConvert.SerializeObject(messageWrapper);
 
-            var messageBuiltAsBytes = MessageBuilder.GetMessageWithHeader(testObj);
+            var messageBuiltAsBytes = MessageBuilder.GetMessage(testObj);
 
             var extractedMessage = ExtractMessageFromPacket(messageBuiltAsBytes);
 
