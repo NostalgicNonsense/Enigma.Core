@@ -1,0 +1,26 @@
+version: 2.1
+
+workflows:
+    version: 2.1
+    pipeline:
+        jobs:
+            - build
+            - unit_tests
+            
+jobs:
+    build:
+        working_directory: ~/project
+        docker:
+            - image: mcr.microsoft.com/dotnet/core/sdk:2.2
+        description: Builds the server
+        steps:
+            - checkout
+            - run: dotnet build -c Release
+    unit_tests:
+        working_directory: ~/project
+        docker:
+            - image: mcr.microsoft.com/dotnet/core/sdk:2.2
+        description: run unit tests
+        steps:
+            - checkout
+            - run: dotnet test
