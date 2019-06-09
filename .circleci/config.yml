@@ -23,4 +23,5 @@ jobs:
         description: run unit tests
         steps:
             - checkout
+            - run: dotnet restore
             - run: dotnet test
